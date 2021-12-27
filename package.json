@@ -1,0 +1,18 @@
+{
+  "name": "torchwrite",
+  "version": "0.0.1",
+  "description": "live environment to visualize Minecraft planar lighting patterns",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Floozutter/torchwrite.git"
+  },
+  "author": "Floozutter <me@floozutter.site> (http://www.floozutter.site/)",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/Floozutter/torchwrite/issues"
+  },
+  "homepage": "https://github.com/Floozutter/torchwrite#readme"
+}
