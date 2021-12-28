@@ -14,5 +14,8 @@
   "bugs": {
     "url": "https://github.com/Floozutter/torchwrite/issues"
   },
-  "homepage": "https://github.com/Floozutter/torchwrite#readme"
+  "homepage": "https://github.com/Floozutter/torchwrite#readme",
+  "devDependencies": {
+    "typescript": "^4.5.4"
+  }
 }
