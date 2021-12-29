@@ -23,6 +23,12 @@ module.exports = {
                 test: /\.ts$/i,
                 loader: "ts-loader",
                 exclude: /node_modules/,
+                options: {
+                    compilerOptions: {
+                        declaration: false,
+                        noEmit: false,
+                    },
+                },
             },
             {
                 test: /\.css$/i,
