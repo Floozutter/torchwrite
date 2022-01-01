@@ -5,7 +5,7 @@
   "scripts": {
     "start": "webpack",
     "lint": "eslint src/",
-    "test": "echo \"error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -18,12 +18,15 @@
   },
   "homepage": "https://github.com/Floozutter/torchwrite#readme",
   "devDependencies": {
+    "@types/jest": "^27.4.0",
     "@typescript-eslint/eslint-plugin": "^5.8.1",
     "@typescript-eslint/parser": "^5.8.1",
     "css-loader": "^6.5.1",
     "eslint": "^8.5.0",
     "html-webpack-plugin": "^5.5.0",
+    "jest": "^27.4.5",
     "mini-css-extract-plugin": "^2.4.5",
+    "ts-jest": "^27.1.2",
     "ts-loader": "^9.2.6",
     "typescript": "^4.5.4",
     "webpack": "^5.65.0",
