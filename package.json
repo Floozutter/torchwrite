@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "description": "live environment to visualize Minecraft planar lighting patterns",
   "scripts": {
-    "start": "webpack",
+    "start": "npm run lint && npm run test && npm run build",
+    "build": "webpack",
     "lint": "eslint src/",
     "test": "jest"
   },
