@@ -1,3 +1,4 @@
 import "index.css";
 
-console.log("hello, world!");
+const visualizer = document.getElementById("visualizer") as HTMLCanvasElement;
+const editor = document.getElementById("editor") as HTMLTextAreaElement;
