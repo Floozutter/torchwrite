@@ -1,6 +1,7 @@
 {
     "compilerOptions": {
         "target": "ES2015",
+        "baseUrl": "src/",
         "module": "ES2015",
         "moduleResolution": "node",
         "noEmit": true,

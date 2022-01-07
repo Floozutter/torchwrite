@@ -1,6 +1,7 @@
 import "index.css";
+import { Visualizer } from "Visualizer";
 
-const visualizer = document.getElementById("visualizer") as HTMLCanvasElement;
+const visualizer = new Visualizer(document.getElementById("visualizer") as HTMLCanvasElement);
 
 const editor = document.getElementById("editor") as HTMLTextAreaElement;
 editor.addEventListener("input", (e: Event) => {
