@@ -2,7 +2,7 @@ export class Visualizer {
     private readonly canvas: HTMLCanvasElement;
     private readonly ctx: CanvasRenderingContext2D;
 
-    constructor(canvas: HTMLCanvasElement,) {
+    constructor(canvas: HTMLCanvasElement) {
         // initialize canvas and context
         if (!canvas.getContext) {
             throw Error("canvas not supported");
