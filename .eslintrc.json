@@ -17,6 +17,8 @@
         "@typescript-eslint"
     ],
     "rules": {
+        "eol-last": ["warn"],
+        "no-trailing-spaces": ["warn"],
         "@typescript-eslint/no-unused-vars": [
             "error",
             {
