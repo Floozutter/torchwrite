@@ -1,8 +1,14 @@
+import { LightSourcePattern } from "LightSourcePattern";
+
 export class Visualizer {
     private readonly canvas: HTMLCanvasElement;
     private readonly ctx: CanvasRenderingContext2D;
+    private sources: LightSourcePattern;
 
-    constructor(canvas: HTMLCanvasElement) {
+    constructor(
+        canvas: HTMLCanvasElement,
+        sources: LightSourcePattern = (x, z) => 0,
+    ) {
         // initialize canvas and context
         if (!canvas.getContext) {
             throw Error("canvas not supported");
@@ -13,5 +19,7 @@ export class Visualizer {
             throw Error("no drawing context");
         }
         this.ctx = ctx;
+        // initialize sources
+        this.sources = sources
     }
 }
