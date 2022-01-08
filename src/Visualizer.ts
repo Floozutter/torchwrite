@@ -20,6 +20,6 @@ export class Visualizer {
         }
         this.ctx = ctx;
         // initialize sources
-        this.sources = sources
+        this.sources = sources;
     }
 }
