@@ -7,7 +7,7 @@ export class Visualizer {
 
     constructor(
         canvas: HTMLCanvasElement,
-        sources: LightSourcePattern = (x, z) => 0,
+        sources: LightSourcePattern = (_x, _z) => 0,
     ) {
         // initialize canvas and context
         if (!canvas.getContext) {
