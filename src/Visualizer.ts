@@ -22,4 +22,8 @@ export class Visualizer {
         // initialize sources
         this.sources = sources;
     }
+
+    setSources(sources: LightSourcePattern) {
+        this.sources = sources;
+    }
 }
