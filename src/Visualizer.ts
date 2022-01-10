@@ -4,10 +4,15 @@ export class Visualizer {
     private readonly canvas: HTMLCanvasElement;
     private readonly ctx: CanvasRenderingContext2D;
     private sources: LightSourcePattern;
+    private cfg: VisualizerConfig = Visualizer.defaults;
+
+    static readonly defaults: VisualizerConfig = {
+    };
 
     constructor(
         canvas: HTMLCanvasElement,
         sources: LightSourcePattern = (_x, _z) => 0,
+        cfg: Partial<VisualizerConfig> = {},
     ) {
         // initialize canvas and context
         if (!canvas.getContext) {
@@ -21,9 +26,19 @@ export class Visualizer {
         this.ctx = ctx;
         // initialize sources
         this.sources = sources;
+        // update config
+        this.setConfig(cfg);
     }
 
     setSources(sources: LightSourcePattern) {
         this.sources = sources;
     }
+
+    setConfig(cfg: Partial<VisualizerConfig>) {
+        this.cfg = {...this.cfg, ...cfg};
+    }
+}
+
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+export interface VisualizerConfig {
 }
