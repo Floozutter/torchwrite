@@ -1,1 +1,3 @@
-export type LightSourcePattern = (x: number, z: number) => number;
+export interface LightSourcePattern {
+    (x: number, z: number): number;
+}
