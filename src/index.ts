@@ -9,3 +9,6 @@ editor.addEventListener("input", (e: Event) => {
     visualizer.setSources((x, z) => x % 16 == 0 && z % 16 == 0 ? 15 : 0);
     console.log(e.target.value);
 });
+
+editor.value = "return x % 16 == 0 && z % 16 == 0 ? 15 : 0;";
+editor.dispatchEvent(new InputEvent("input"));
