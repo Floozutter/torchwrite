@@ -1,9 +1,9 @@
-import { LightSourcePattern } from "LightSourcePattern";
+import { LightPattern } from "light";
 
 export class Visualizer {
     private readonly canvas: HTMLCanvasElement;
     private readonly ctx: CanvasRenderingContext2D;
-    private sources: LightSourcePattern;
+    private sources: LightPattern;
     private cfg: VisualizerConfig = Visualizer.defaults;
 
     static readonly defaults: VisualizerConfig = {
@@ -11,7 +11,7 @@ export class Visualizer {
 
     constructor(
         canvas: HTMLCanvasElement,
-        sources: LightSourcePattern = (_x, _z) => 0,
+        sources: LightPattern = (_x, _z) => 0,
         cfg: Partial<VisualizerConfig> = {},
     ) {
         // initialize canvas and context
@@ -30,7 +30,7 @@ export class Visualizer {
         this.setConfig(cfg);
     }
 
-    setSources(sources: LightSourcePattern) {
+    setSources(sources: LightPattern) {
         this.sources = sources;
     }
 
