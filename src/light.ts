@@ -7,3 +7,8 @@ export interface LightPattern {
 export function lightClamp(n: number): Light {
     return Math.round(Math.min(Math.max(n, 0), 15)) as Light;
 }
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function lightWrap(f: (x: number, z: number) => any): LightPattern {
+    return (x, z) => lightClamp(Number(f(x, z)));
+}
