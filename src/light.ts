@@ -10,5 +10,12 @@ export function lightClamp(n: number): Light {
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function lightWrap(f: (x: number, z: number) => any): LightPattern {
-    return (x, z) => lightClamp(Number(f(x, z)));
+    const forceNumber = (x: number, z: number): number => {
+        try {
+            return Number(f(x, z));
+        } catch (_) {
+            return NaN;
+        }
+    };
+    return (x, z) => lightClamp(forceNumber(x, z));
 }
