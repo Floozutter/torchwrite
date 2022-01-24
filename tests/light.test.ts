@@ -2,8 +2,8 @@ import { lightClamp, lightWrap } from "light";
 import { describe, it, expect } from "@jest/globals";
 
 describe(lightClamp.name, () => {
-    it("prevents NaN propagation", () => {
-        expect(lightClamp(NaN)).not.toBe(NaN);
+    it("prevents NaN propagation by returning 0", () => {
+        expect(lightClamp(NaN)).toBe(0);
     });
 });
 
