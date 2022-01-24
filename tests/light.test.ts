@@ -8,5 +8,7 @@ describe(lightClamp.name, () => {
 });
 
 describe(lightWrap.name, () => {
-    it.todo("returns 0 instead of throwing");
+    it("prevents exception propagation by returning 0", () => {
+        expect(lightWrap((_x, _z) => { throw new Error(); })(NaN, NaN)).toBe(0);
+    });
 });
