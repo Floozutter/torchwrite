@@ -8,6 +8,12 @@ describe(lightClamp.name, () => {
         expect(lightClamp(Number.MIN_SAFE_INTEGER)).toBe(0);
         expect(lightClamp(-Infinity)).toBe(0);
     });
+    it("clamps values greater than 15 to 15", () => {
+        expect(lightClamp(15+Number.EPSILON)).toBe(15);
+        expect(lightClamp(16)).toBe(15);
+        expect(lightClamp(Number.MAX_SAFE_INTEGER)).toBe(15);
+        expect(lightClamp(Infinity)).toBe(15);
+    });
     it("prevents NaN propagation by returning 0", () => {
         expect(lightClamp(NaN)).toBe(0);
     });
