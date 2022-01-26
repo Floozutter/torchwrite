@@ -2,6 +2,11 @@ import { lightClamp, lightWrap } from "light";
 import { describe, it, expect } from "@jest/globals";
 
 describe(lightClamp.name, () => {
+    it("preserves integers in 0..16", () => {
+        for (let l = 0; l < 16; ++l) {
+            expect(lightClamp(l)).toBe(l);
+        }
+    });
     it("clamps values less than 0 to 0", () => {
         expect(lightClamp(-Number.EPSILON)).toBe(0);
         expect(lightClamp(-1)).toBe(0);
