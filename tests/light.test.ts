@@ -3,8 +3,13 @@ import { describe, it, expect } from "@jest/globals";
 
 describe(lightClamp.name, () => {
     it("preserves integers in 0..16", () => {
-        for (let l = 0; l < 16; ++l) {
-            expect(lightClamp(l)).toBe(l);
+        for (let i = 0; i < 16; ++i) {
+            expect(lightClamp(i)).toBe(i);
+        }
+    });
+    it("rounds non-integers to the nearest integer in 0..16", () => {
+        for (let n = 0.1; n < 15; n += 0.1) {
+            expect(lightClamp(n)).toBe(Math.round(n));
         }
     });
     it("clamps values less than 0 to 0", () => {
