@@ -19,3 +19,7 @@ export function lightWrap(f: (x: number, z: number) => any): LightPattern {
     };
     return (x, z) => lightClamp(forceNumber(x, z));
 }
+
+export function evalLightPattern(_body: string): LightPattern {
+    return (_x, _z) => 0;
+}
