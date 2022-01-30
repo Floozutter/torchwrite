@@ -20,6 +20,9 @@ export function lightWrap(f: (x: number, z: number) => any): LightPattern {
     return (x, z) => lightClamp(forceNumber(x, z));
 }
 
-export function evalLightPattern(_body: string): LightPattern {
-    return (_x, _z) => 0;
+export function evalLightPattern(body: string): LightPattern {
+    // eslint-disable-next-line @typescript-eslint/no-implied-eval
+    const f = new Function("x", "z", body);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    return lightWrap(f as (x: number, z: number) => any);
 }
