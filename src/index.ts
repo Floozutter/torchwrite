@@ -7,9 +7,9 @@ const visualizer = new Visualizer(document.getElementById("visualizer") as HTMLC
 const editor = document.getElementById("editor") as HTMLTextAreaElement;
 editor.addEventListener("input", (e: Event) => {
     if (!(e instanceof InputEvent && e.target instanceof HTMLTextAreaElement)) { return; }
-    console.log(e.target.value);
     try {
         visualizer.setSources(evalLightPattern(e.target.value));
+        console.log(e.target.value);
     } catch (err) {
         console.error(err);
     }
