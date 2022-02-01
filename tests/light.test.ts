@@ -1,4 +1,4 @@
-import { lightClamp, lightWrap } from "light";
+import { lightClamp, lightWrap, evalLightPattern } from "light";
 import { describe, it, expect } from "@jest/globals";
 
 describe(lightClamp.name, () => {
@@ -32,5 +32,12 @@ describe(lightClamp.name, () => {
 describe(lightWrap.name, () => {
     it("prevents exception propagation by returning 0", () => {
         expect(lightWrap((_x, _z) => { throw new Error(); })(NaN, NaN)).toBe(0);
+    });
+});
+
+describe(evalLightPattern.name, () => {
+    it("correctly evaluates well-formed function bodies", () => {
+        expect(evalLightPattern("return 0;")(0, 0)).toBe(0);
+        expect(evalLightPattern("return 15;")(0, 0)).toBe(15);
     });
 });
