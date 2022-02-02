@@ -40,4 +40,7 @@ describe(evalLightPattern.name, () => {
         expect(evalLightPattern("return 0;")(0, 0)).toBe(0);
         expect(evalLightPattern("return 15;")(0, 0)).toBe(15);
     });
+    it("throws on ill-formed function bodies", () => {
+        expect(() => evalLightPattern("!")).toThrow(SyntaxError);
+    });
 });
