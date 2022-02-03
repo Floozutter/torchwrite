@@ -42,5 +42,6 @@ describe(evalLightPattern.name, () => {
     });
     it("throws on ill-formed function bodies", () => {
         expect(() => evalLightPattern("!")).toThrow(SyntaxError);
+        expect(() => evalLightPattern("ret 0;")).toThrow(SyntaxError);
     });
 });
